@@ -89,24 +89,27 @@
 
     <build>
         <plugins>
+            <!--编译配置插件-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven.compiler.plugin.version}</version>
                 <configuration>
-                    <source>${maven.compiler.source}</source>
-                    <target>${maven.compiler.target}</target>
-                    <encoding>${project.build.sourceEncoding}</encoding>
-                    <skip>${maven.test.skip}</skip>
+                    <source>${maven.compiler.source}</source><!--源代码编译版本的版本-->
+                    <target>${maven.compiler.target}</target><!--目标平台编译版本的版本-->
+                    <encoding>${project.build.sourceEncoding}</encoding><!--统一字符集编码-->
+                    <skip>${maven.test.skip}</skip><!--是否跳过测试代码的编译-->
                 </configuration>
             </plugin>
 
+            <!--资源配置插件-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
                 <version>${maven.source.plugin.version}</version>
             </plugin>
 
+            <!--war包配置插件-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
